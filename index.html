@@ -50,7 +50,7 @@
         <div class="box-progetti">
             <div class="progetti-card">
                 <a class="link-pagina" href="https://codepen.io/erick-shadowhunt/full/KKamdPJ">
-                    <img src="img/insignia-dev.png" alt="Progetto 1" class="progetti-immagine">
+                    <img src="img/insignia-dev-min.png" alt="Progetto 1" class="progetti-immagine">
                     <div class="box-testo-progetti">
                         <h3 class="info-progetti">Immersione Dev</h3>
                         <p class="paragrafo-progetti">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
@@ -62,7 +62,7 @@
         </div>
 
         <div class="progetti-card">
-            <img src="img/progetto-skills.png" alt="Progetto 2" class="progetti-immagine">
+            <img src="img/progetto-skills-min.png" alt="Progetto 2" class="progetti-immagine">
             <div class="box-testo-progetti">
                 <a class="link-pagina" href="https://piloterick.github.io/">
                     <h3 class="info-progetti">Pagina Skills</h3>
@@ -75,7 +75,7 @@
         </div>
 
         <div class="progetti-card">
-            <img src="img/vartual-classroom.png" alt="Progetto 3" class="progetti-immagine">
+            <img src="img/vartual-classroom-min.png" alt="Progetto 3" class="progetti-immagine">
             <div class="box-testo-progetti">
                 <a class="link-pagina" href="https://piloterick.github.io/vartual.classroom/">
                     <h3 class="info-progetti">Vartual Classroom</h3>
@@ -91,18 +91,36 @@
 
     <section id="contatti" class="contatti">
         <h2 class="titolo-contatti">Entra in Contatto</h2>
-        <form class="formulario-contatti" id="formulario">
+        <form class="formulario-contatti" id="formulario" onsubmit="inviareWhats(event)">
             <div class="gruppo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
             </div>
             <div class="gruppo-form">
-                <textarea class="campo-form" placeholder="Scrivi qui il tuo messaggio"></textarea>
+                <textarea class="campo-form" placeholder="Scrivi qui il tuo messaggio" rows="6"
+                    id="messaggio"></textarea>
             </div>
 
             <button type="submit" class="button-form">Inviare Whatsapp</button>
         </form>
-
     </section>
+
+    <script>
+        function inviareWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const messaggio = document.getElementById('messaggio').value;
+            const telefono = '393518972673'
+
+            const testo = `Ciao! Mi chiamo ${nome}, ${messaggio}`
+            const msgFormattato = encodeURIComponent(testo)
+
+            const url = `https://wa.me/${telefono}?text=${msgFormattato}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
 </body>
 
 </html>
