@@ -159,6 +159,11 @@ h1 {
     padding: 1.5rem;
 }
 
+.link-pagina {
+    text-decoration: none;
+    color: var(--chiaro);
+}
+
 .info-progetti {
     margin-bottom: 5px;
 }
