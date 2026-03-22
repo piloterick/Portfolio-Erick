@@ -49,43 +49,38 @@
         <h2 class="titolo-progetti">Miei Progetti</h2>
         <div class="box-progetti">
             <div class="progetti-card">
-                <a class="link-pagina" href="https://codepen.io/erick-shadowhunt/full/KKamdPJ">
-                    <img src="img/insignia-dev-min.png" alt="Progetto 1" class="progetti-immagine">
-                    <div class="box-testo-progetti">
+                <img src="img/insignia-dev-min.png" alt="Progetto 1" class="progetti-immagine">
+                <div class="box-testo-progetti">
+                    <a class="link-pagina" href="https://codepen.io/erick-shadowhunt/full/KKamdPJ">
+
                         <h3 class="info-progetti">Immersione Dev</h3>
-                        <p class="paragrafo-progetti">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-                            fuga
-                            cumque rem ullam laudantium, sit sed veniam at vero officia corporis necessitatibus labore
-                            voluptatibus ut culpa excepturi mollitia minus. Veniam.</p>
-                </a>
+                        <p class="paragrafo-progetti">Applicazione web interattiva sviluppata durante l'Immersione Dev.
+                            Tecnologie: HTML, CSS, JavaScript.</p>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="progetti-card">
-            <img src="img/progetto-skills-min.png" alt="Progetto 2" class="progetti-immagine">
-            <div class="box-testo-progetti">
-                <a class="link-pagina" href="https://piloterick.github.io/">
-                    <h3 class="info-progetti">Pagina Skills</h3>
-                    <p class="paragrafo-progetti">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-                        fuga
-                        cumque rem ullam laudantium, sit sed veniam at vero officia corporis necessitatibus labore
-                        voluptatibus ut culpa excepturi mollitia minus. Veniam.</p>
-                </a>
+            <div class="progetti-card">
+                <img src="img/progetto-skills-min.png" alt="Progetto 2" class="progetti-immagine">
+                <div class="box-testo-progetti">
+                    <a class="link-pagina" href="https://piloterick.github.io/">
+                        <h3 class="info-progetti">Pagina Skills</h3>
+                        <p class="paragrafo-progetti">Pagina web personale che mostra le mie competenze 
+                                tecniche. Tecnologie: HTML, CSS.</p>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="progetti-card">
-            <img src="img/vartual-classroom-min.png" alt="Progetto 3" class="progetti-immagine">
-            <div class="box-testo-progetti">
-                <a class="link-pagina" href="https://piloterick.github.io/vartual.classroom/">
-                    <h3 class="info-progetti">Vartual Classroom</h3>
-                    <p class="paragrafo-progetti">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
-                        fuga
-                        cumque rem ullam laudantium, sit sed veniam at vero officia corporis necessitatibus labore
-                        voluptatibus ut culpa excepturi mollitia minus. Veniam.</p>
-                </a>
+            <div class="progetti-card">
+                <img src="img/vartual-classroom-min.png" alt="Progetto 3" class="progetti-immagine">
+                <div class="box-testo-progetti">
+                    <a class="link-pagina" href="https://piloterick.github.io/vartual.classroom/">
+                        <h3 class="info-progetti">Vartual Classroom</h3>
+                        <p class="paragrafo-progetti">Piattaforma di aula virtuale per l'apprendimento 
+                                online. Tecnologie: HTML, CSS, JavaScript.</p>
+                    </a>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -106,18 +101,22 @@
 
     <script>
         function inviareWhats(event) {
-            event.preventDefault()
+            event.preventDefault();
 
-            const nome = document.getElementById('nome').value;
-            const messaggio = document.getElementById('messaggio').value;
-            const telefono = '393518972673'
+            const nome = document.getElementById('nome').value.trim();
+            const messaggio = document.getElementById('messaggio').value.trim();
 
-            const testo = `Ciao! Mi chiamo ${nome}, ${messaggio}`
-            const msgFormattato = encodeURIComponent(testo)
+            // ✅ Aggiungi validazione
+            if (!nome || !messaggio) {
+                alert('Per favore, compila tutti i campi');
+                return;
+            }
 
-            const url = `https://wa.me/${telefono}?text=${msgFormattato}`
+            const telefono = '393518972673';
+            const testo = `Ciao! Mi chiamo ${nome}, ${messaggio}`;
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(testo)}`;
 
-            window.open(url, '_blank')
+            window.open(url, '_blank');
         }
 
     </script>

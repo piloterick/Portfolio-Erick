@@ -20,7 +20,7 @@ html {
 
 body {
     background-color: var(--scuro);
-    color: var(--chiaro)
+    color: var(--chiaro);
 }
 
 .navegazione {
@@ -146,7 +146,7 @@ h1 {
 }
 
 .progetti-card:hover {
-    box-shadow: 0 10px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
     transform: translateY(-10px) scale(1.03);
 }
 
@@ -206,7 +206,7 @@ h1 {
 
 .campo-form:focus {
     border-color: var(--secondario);
-    box-shadow: 0 0 10px rgba(79, 70, 229 0.3);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
 }
 
 .gruppo-form {
